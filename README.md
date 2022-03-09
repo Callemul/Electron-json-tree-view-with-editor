@@ -1,4 +1,14 @@
-# electron-quick-start
+# Electron JSON Tree View Project
+
+Parse json file and show in HTML (like tree-view DOM)
+
+We are using 
+- Node.js 16.13.0, 
+- Chromium 98.0.4758.102, 
+- and Electron 17.1.0.
+
+## Main commits
+- v6.1 - stable view tree in HTML from JSON file.
 
 **Clone and run for a quick way to see Electron in action.**
 
