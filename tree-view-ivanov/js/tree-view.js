@@ -22,59 +22,28 @@ exports.viewtree = function (DOMTreeElementId, JSONObject) {
         //onclick event
         element[i].addEventListener("click", function(){
              
-            console.log('i--------------------------:'+i)
-            console.log('i:'+i)
-            console.log('element:'+element)
-            console.log(element[0].dataset)
-            console.log('data-atrrib dataset.myattri:'+element[0].dataset.myattri)
+            console.log('--------------------------')
+            console.log('data-atrrib dataset.myattri:'+this.dataset.myattri)
 
-            console.log('element:')
+            console.log('this:')
             console.log(this)
             console.log('this.innerHTML:'+this.innerHTML)
-            console.log('element[0]:'+element[0])
-            console.log('element[0].innerHTML:'+element[0].innerHTML)
-            console.log('element[0].style.display:'+element[0].style.display)
-            console.log('element[4].style.display:'+element[4].style.display)
+           
 
-            console.log('element[i]:'+element[i])
-            // console.log('element[i].style.display:'+element[i].style.display) //ERROR
-
-            // myInput.setAttribute('custom-attr', 'custom-value');
-            // alert(myInput.getAttribute('custom-attr'));
-
-            // console.log('element[i].style.display:'+element[i].getAttribute('data-myAttri')) //ERROR
-            // element[i].setAttribute('data-myattri', ''+i);
-            // element[i].setAttribute('', 'hide-show-'+i);
-            
-
-            if(element[i].style.display === 'none'){
+            if(this.style.display === 'none'){
                 console.log('display (before click) = none /// else')
 
-                element[i].style.display = 'block';
+                this.style.display = 'block';
                 // el.innerHTML = "[ -- ]";
             }else{
                 //element[i].style.display === 'block' or 'inline' etc
                 console.log('display (before click) = block')
 
-                element[i].style.display = 'none';
+                this.style.display = 'none';
                 // el.innerHTML = "[ + ]";
             }
 
-            // if(element[i].getAttribute('style') === 'block'){
-            //     console.log('display (before click) = block')
-
-            //     element[i].setAttribute("style", "display = 'none'");
-            //     // element[i].style.display = 'none';
-            //     // el.innerHTML = "[ + ]";
-            // }else{
-            //     console.log('display (before click) = none /// else')
-
-            //     element[i].setAttribute("style", "display = 'block'");
-
-            //     // element[i].style.display = 'block';
-            //     // el.innerHTML = "[ -- ]";
-
-            // }
+            console.log('------END Click EVENT -------')
         }
         , false);   
     }
