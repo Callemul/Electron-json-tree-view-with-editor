@@ -1,4 +1,6 @@
-# electron-quick-start
+# Electron JS Project
+
+Parse json file and show in HTML (like tree-view DOM)
 
 **Clone and run for a quick way to see Electron in action.**
 
