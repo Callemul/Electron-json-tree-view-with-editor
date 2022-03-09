@@ -7,6 +7,9 @@ We are using
 - Chromium 98.0.4758.102, 
 - and Electron 17.1.0.
 
+## Main commits
+- v6.1 - stable view tree in HTML from JSON file.
+
 **Clone and run for a quick way to see Electron in action.**
 
 This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start) within the Electron documentation.
