@@ -1,0 +1,2 @@
+I didnt know how read console.log() in main.js - answer is - in Terminal windows
+https://stackoverflow.com/questions/31759367/using-console-log-in-electron-app
