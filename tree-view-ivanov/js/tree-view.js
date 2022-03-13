@@ -27,7 +27,7 @@ exports.viewtree = function (DOMTreeElementId, JSONObject) {
         if (typeof data !== 'object') {
             ret += "<li>" + o + " : " + data + "</li>";
         } else {
-            ret += "<li class=\"parent\">" + o + " : <div data-myAttri=\"_\" id='hide-show' class=\"hiso\" style=\"display: inline;\"> [ - ]" + logTheObj(data) + "</div></li>";
+            ret += "<li class=\"parent\">" + o + " :" + logTheObj(data) + "</div></li>";
         }
     }
     return "<ul>" + ret + "</ul>";
