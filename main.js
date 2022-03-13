@@ -6,8 +6,8 @@ const fs = require('fs');
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 600,
+    width: 1400,
+    height: 800,
 
     webPreferences: {
       nodeIntegration: true, /*for can use require in renderer.js*/

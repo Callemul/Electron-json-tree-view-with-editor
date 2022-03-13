@@ -14,7 +14,7 @@ exports.viewtree = function (DOMTreeElementId, JSONObject) {
     var element= document.getElementsByClassName('hiso');
     console.log('element[0]:'+element[0])
     for(var i=0;i<element.length;i++){
-        console.log('i:'+i)
+        // console.log('i:'+i)
 
         //set attribute value
         element[i].dataset.myattri = i
