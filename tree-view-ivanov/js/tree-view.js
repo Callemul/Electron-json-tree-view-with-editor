@@ -1,4 +1,6 @@
 exports.viewtree = function (DOMTreeElementId, JSONObject) {
+    
+    
     console.log('gg: ' + DOMTreeElementId.innerHTML)
     
     console.log(JSONObject)
@@ -7,46 +9,13 @@ exports.viewtree = function (DOMTreeElementId, JSONObject) {
     const htmlGeneretedTreeHTML = logTheObj(JSONObject)
     DOMTreeElementId.innerHTML = htmlGeneretedTreeHTML;
     
-   console.log(
-       "document.getElementsByClassName('hiso')[0].style.display:"+
-          document.getElementsByClassName('hiso')[0].style.display)
 
-    var element= document.getElementsByClassName('hiso');
-    console.log('element[0]:'+element[0])
-    for(var i=0;i<element.length;i++){
-        // console.log('i:'+i)
+    var menuParents = document.querySelectorAll("#tree .parent");
+    menuParents.forEach(menuParent => {
+        menuParent.addEventListener("click", ToggleTree);
+    })
 
-        //set attribute value
-        element[i].dataset.myattri = i
 
-        //onclick event
-        element[i].addEventListener("click", function(){
-             
-            console.log('--------------------------')
-            console.log('data-atrrib dataset.myattri:'+this.dataset.myattri)
-
-            console.log('this:')
-            console.log(this)
-            console.log('this.innerHTML:'+this.innerHTML)
-           
-
-            if(this.style.display === 'none'){
-                console.log('display (before click) = none /// else')
-
-                this.style.display = 'block';
-                // el.innerHTML = "[ -- ]";
-            }else{
-                //element[i].style.display === 'block' or 'inline' etc
-                console.log('display (before click) = block')
-
-                this.style.display = 'none';
-                // el.innerHTML = "[ + ]";
-            }
-
-            console.log('------END Click EVENT -------')
-        }
-        , false);   
-    }
 
   };
 
@@ -58,7 +27,7 @@ exports.viewtree = function (DOMTreeElementId, JSONObject) {
         if (typeof data !== 'object') {
             ret += "<li>" + o + " : " + data + "</li>";
         } else {
-            ret += "<li>" + o + " : <div data-myAttri=\"_\" id='hide-show' class=\"hiso\" style=\"display: inline;\"> [ - ]" + logTheObj(data) + "</div></li>";
+            ret += "<li class=\"parent\">" + o + " : <div data-myAttri=\"_\" id='hide-show' class=\"hiso\" style=\"display: inline;\"> [ - ]" + logTheObj(data) + "</div></li>";
         }
     }
     return "<ul>" + ret + "</ul>";
@@ -77,4 +46,16 @@ exports.viewtree = function (DOMTreeElementId, JSONObject) {
         }
     }
     return "<ul>" + ret + "</ul>";
+}
+
+
+function ToggleTree(event) {
+    event.stopPropagation();
+    event.target.classList.toggle('active');
+    event.target.firstElementChild.style.display = toggle[event.target.firstElementChild.style.display] || 'block';
+}
+
+const toggle = {
+    block: 'none',
+    none: 'block'
 }
